@@ -2,7 +2,12 @@ import React from "react";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
 
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+
 const Login = () => {
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
+
   return (
     <div className="flex flex-wrap content-center lg:items-center h-screen ">
       <div className="w-full lg:w-5/12">
@@ -25,7 +30,10 @@ const Login = () => {
           >
             일반 계정으로 로그인
           </button>
-          <button className="w-3/6 border-2 p-2 m-1 rounded hover:bg-yellow-200">
+          <button
+            className="w-3/6 border-2 p-2 m-1 rounded hover:bg-yellow-200"
+            onClick={() => signInWithGoogle()}
+          >
             구글 계정으로 로그인
           </button>
         </div>
