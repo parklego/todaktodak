@@ -1,27 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../firebase";
-import Login from "../component/Login";
-import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+
+import Header from "../layout/Header";
+import Login from "./Login";
 
 const Home = () => {
-  const [user, loading] = useAuthState(auth);
-
-  const logOut = () => {
-    signOut(auth);
-  };
+  const [user] = useAuthState(auth);
 
   if (!user) {
     return <Login />;
   }
 
-  console.log(user);
-
   return (
     <div>
-      <p>로그인 성공</p>
-
-      <button onClick={logOut}>로그아웃</button>
+      <Header />
     </div>
   );
 };
