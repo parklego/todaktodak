@@ -11,13 +11,14 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between px-6 py-2 border">
-      <div className="flex flex-row w-24 items-center justify-evenly">
+    <div className="flex flex-row justify-between px-4 py-2 border">
+      <div className="flex flex-row w-32 items-center justify-evenly">
         <img
           className=" w-9 h-9 rounded-full"
           src={user?.photoURL!}
           alt="user profile"
         />
+
         <p>{user?.displayName}</p>
       </div>
 
