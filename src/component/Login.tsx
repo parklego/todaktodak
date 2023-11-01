@@ -8,6 +8,18 @@ import { auth } from "../firebase";
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
 
+  const deviceCheck = () => {
+    const kakaoCheck = () => {
+      return /KAKAOTALK/i.test(navigator.userAgent);
+    };
+
+    if (kakaoCheck()) {
+      alert(
+        "혹시 카카오 브라우저에서 열었나요? 크롬, 사파리와 같이 다른 브라우저를 이용해주세요."
+      );
+    }
+    signInWithGoogle();
+  };
   return (
     <div className="flex flex-wrap content-center lg:items-center h-screen ">
       <div className="w-full lg:w-5/12">
@@ -32,7 +44,7 @@ const Login = () => {
           </button>
           <button
             className="w-3/6 border-2 p-2 m-1 rounded hover:bg-yellow-200"
-            onClick={() => signInWithGoogle()}
+            onClick={deviceCheck}
           >
             구글 계정으로 로그인
           </button>
