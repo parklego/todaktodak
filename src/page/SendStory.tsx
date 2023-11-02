@@ -6,7 +6,6 @@ import { useRecoilState } from "recoil";
 import { storyState } from "../atom/story";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db, auth } from "../firebase";
-import { User } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
@@ -20,7 +19,16 @@ const SendStory = () => {
   const sendStory = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (story.editStory.trim().length === 0) return;
+    if (
+      story.editStory.trim().length === 0 ||
+      story.editTitle.trim().length === 0
+    ) {
+      return Alert(
+        "question",
+        "안내",
+        "혹시 입력하지 않은 곳이 있나요? 다시 한 번 체크해주세요."
+      );
+    }
 
     await addDoc(collection(db, `story`), {
       title: story.editTitle,
