@@ -5,10 +5,11 @@ import {
   AccordionIcon,
 } from "@chakra-ui/react";
 import StoryCard from "./StoryCard";
+import { StoryItem } from "../types";
 
 interface AccordionProps {
   title: string;
-  content: string;
+  content: StoryItem;
 }
 
 const Accordions = ({ title, content }: AccordionProps) => {
@@ -17,12 +18,12 @@ const Accordions = ({ title, content }: AccordionProps) => {
       <AccordionItem className="border-2 rounded">
         <h2>
           <AccordionButton className="flex justify-between ">
-            <div className="">{`오늘 날씨가 좋네요.`}</div>
+            <div className="">{title}</div>
             <AccordionIcon />
           </AccordionButton>
         </h2>
         <AccordionPanel pb={4}>
-          <StoryCard />
+          <StoryCard content={content as StoryItem} />
         </AccordionPanel>
       </AccordionItem>
     </div>

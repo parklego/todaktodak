@@ -8,10 +8,17 @@ import {
   CardHeader,
   CardBody,
 } from "@chakra-ui/react";
+import { StoryItem } from "../types";
 
-interface StoryCardProps {}
+interface StoryCardProps {
+  content: StoryItem;
+}
 
-const StoryCard = () => {
+const StoryCard = ({ content }: StoryCardProps) => {
+  const reply =
+    content.reply.length !== 0
+      ? content.reply
+      : "사연을 읽고 있는 중입니다. 잠시만 기다려주세요. ^^";
   return (
     <>
       {/* 사연부분 */}
@@ -20,16 +27,13 @@ const StoryCard = () => {
           <Flex>
             <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
               <Box>
-                <Heading size="sm">박만두</Heading>
+                <Heading size="sm">{content.name}</Heading>
               </Box>
             </Flex>
           </Flex>
         </CardHeader>
         <CardBody>
-          <Text className=" font-nanumDahaeng">
-            {`오늘은 날씨가 정말 좋네요. 저는 나들이를 나왔어요. 단풍이 조금 떨어지긴 했지만 알록달록하게 아직 남은 단풍을 보면서
-          여유롭게 거리를 돌아다니고 있어요. `}
-          </Text>
+          <Text className=" font-nanumDahaeng">{content.text}</Text>
         </CardBody>
       </Card>
 
@@ -46,9 +50,7 @@ const StoryCard = () => {
         </CardHeader>
 
         <CardBody>
-          <Text className=" font-nanumSungsil">
-            {`맞아요! 오늘 날씨가 정말 좋네요. 어느덧 한 해가 끝나가네요. 이번 겨울에는 화이트 크리스마스일까요? 눈이 펑펑왔으면 좋겠네요 :) 따뜻하게 옷 입으시고, 건강 조심하세요 ^^`}
-          </Text>{" "}
+          <Text className=" font-nanumSungsil">{reply}</Text>{" "}
         </CardBody>
       </Card>
     </>
