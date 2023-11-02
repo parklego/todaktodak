@@ -33,7 +33,7 @@ const Home = () => {
     }
   }, [user]);
 
-  if (!user) {
+  if (!loading && !user) {
     return <Login />;
   }
 
