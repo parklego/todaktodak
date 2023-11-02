@@ -6,9 +6,12 @@ import Login from "./Login";
 import { Spinner, Button } from "@chakra-ui/react";
 import Story from "../component/Story";
 import Layout from "../layout/Layout";
+import { useRecoilValue } from "recoil";
+import { storyStateSelector } from "../selector/user";
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
+  const isEdit = useRecoilValue(storyStateSelector);
 
   const nativage = useNavigate();
 
@@ -34,7 +37,6 @@ const Home = () => {
   return (
     <Layout>
       <Story />
-
       <div className=" flex justify-center my-5">
         <Button
           size={"lg"}
@@ -42,7 +44,7 @@ const Home = () => {
           variant="solid"
           onClick={() => nativage("/send")}
         >
-          나도 사연 쓰러가기
+          {isEdit ? "사연 이어쓰기" : "사연 쓰러가기"}
         </Button>
       </div>
     </Layout>
