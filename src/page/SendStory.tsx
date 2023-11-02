@@ -9,6 +9,7 @@ import { db, auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
+import Swal from "sweetalert2";
 
 const SendStory = () => {
   const [story, setStory] = useRecoilState(storyState);
@@ -30,28 +31,39 @@ const SendStory = () => {
       );
     }
 
-    await addDoc(collection(db, `story`), {
-      title: story.editTitle,
-      text: story.editStory,
-      reply: "",
-      name: user?.displayName,
-      timestamp: serverTimestamp(),
-    })
-      .then((res) => {
-        Alert(
-          "success",
-          "성공",
-          "사연을 성공적으로 보냈습니다. 답변은 1-2일 정도 소요됩니다."
-        );
-        setStory({ ...story, editTitle: "", editStory: "" });
-      })
-      .catch((e) => {
-        Alert(
-          "error",
-          "실패",
-          "사연을 보낼 수 없습니다. 잠시후 다시 시도하여 주세요."
-        );
-      });
+    Swal.fire({
+      title: "사연을 이대로 보내시겠습니까?",
+      text: " 사연을 보내면 더 이상 수정할 수 없으니 신중하게 작성해주세요.",
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "확인",
+      cancelButtonText: "되돌아가기",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await addDoc(collection(db, `story`), {
+          title: story.editTitle,
+          text: story.editStory,
+          reply: "",
+          name: user?.displayName,
+          timestamp: serverTimestamp(),
+        })
+          .then((res) => {
+            Alert(
+              "success",
+              "성공",
+              "사연을 성공적으로 보냈습니다. 답변은 1-2일 정도 소요됩니다."
+            );
+            setStory({ ...story, editTitle: "", editStory: "" });
+          })
+          .catch((e) => {
+            Alert(
+              "error",
+              "실패",
+              "사연을 보낼 수 없습니다. 잠시후 다시 시도하여 주세요."
+            );
+          });
+      }
+    });
   };
   return (
     <Layout>
