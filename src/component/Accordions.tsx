@@ -1,11 +1,10 @@
-import React from "react";
 import {
-  Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
 } from "@chakra-ui/react";
+import StoryCard from "./StoryCard";
 
 interface AccordionProps {
   title: string;
@@ -15,17 +14,17 @@ interface AccordionProps {
 const Accordions = ({ title, content }: AccordionProps) => {
   return (
     <div>
-      <Accordion allowToggle>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <div>{title}</div>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>{content}</AccordionPanel>
-        </AccordionItem>
-      </Accordion>
+      <AccordionItem>
+        <h2>
+          <AccordionButton>
+            <div className="">{`오늘 날씨가 좋네요.`}</div>
+            <AccordionIcon />
+          </AccordionButton>
+        </h2>
+        <AccordionPanel pb={4}>
+          <StoryCard />
+        </AccordionPanel>
+      </AccordionItem>
     </div>
   );
 };
