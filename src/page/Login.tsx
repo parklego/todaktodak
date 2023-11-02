@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@chakra-ui/react";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
@@ -9,6 +9,8 @@ import bg from "../asset/bg.jpg";
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const deviceCheck = () => {
     const kakaoCheck = () => {
@@ -29,8 +31,20 @@ const Login = () => {
       <div className="w-full lg:w-5/12">
         <div className="flex flex-col justify-center items-center  ">
           <img className=" w-1/2" src={logo} alt="logo" />
-          <Input type="text" id="이메일"></Input>
-          <Input type="password" id="비밀번호"></Input>
+          <Input
+            type="text"
+            id="Email"
+            placeholder="이메일을 입력해주세요."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></Input>
+          <Input
+            type="password"
+            id="Password"
+            placeholder="비밀번호를 입력해주세요."
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></Input>
         </div>
 
         <div className="flex flex-col items-center mt-5">
