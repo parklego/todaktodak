@@ -1,20 +1,25 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import Home from "./page/Home";
-import SendStory from "./page/SendStory";
+
 import { RecoilRoot } from "recoil";
+import Spinners from "./component/Spinners";
+
+const Home = lazy(() => import("./page/Home"));
+const SendStory = lazy(() => import("./page/SendStory"));
 
 function App() {
   return (
     <ChakraProvider>
       <RecoilRoot>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/send" element={<SendStory />}></Route>
-          </Routes>
+          <Suspense fallback={<Spinners />}>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/send" element={<SendStory />}></Route>
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </RecoilRoot>
     </ChakraProvider>
