@@ -5,11 +5,14 @@ import Accordions from "./Accordions";
 const Story = () => {
   // Todo : 각 story items firebase에서 가져와서 map으로 뿌려주기
   return (
-    <div>
-      <Accordion allowToggle>
-        <Accordions title="test" content="contents" />
-      </Accordion>
-    </div>
+    <>
+      <div className=" lg:flex lg:justify-center">
+        <Accordion className="h-[80vh] overflow-scroll lg:w-[80%] " allowToggle>
+          <Accordions title="test" content="contents" />
+          <Accordions title="test" content="contents" />
+        </Accordion>
+      </div>
+    </>
   );
 };
 

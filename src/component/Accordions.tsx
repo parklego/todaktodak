@@ -14,9 +14,9 @@ interface AccordionProps {
 const Accordions = ({ title, content }: AccordionProps) => {
   return (
     <div>
-      <AccordionItem>
+      <AccordionItem className="border-none">
         <h2>
-          <AccordionButton>
+          <AccordionButton className="flex justify-between">
             <div className="">{`오늘 날씨가 좋네요.`}</div>
             <AccordionIcon />
           </AccordionButton>

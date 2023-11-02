@@ -2,7 +2,6 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-import Header from "../layout/Header";
 import Login from "./Login";
 import { Spinner, Button } from "@chakra-ui/react";
 import Story from "../component/Story";
@@ -34,14 +33,19 @@ const Home = () => {
   console.log(user);
   return (
     <Layout>
-      <Story />
-      <Button
-        colorScheme="linkedin"
-        variant="solid"
-        onClick={() => nativage("/send")}
-      >
-        나도 사연 쓰러가기
-      </Button>
+      <div className="">
+        <Story />
+      </div>
+
+      <div className=" flex justify-center my-5">
+        <Button
+          colorScheme="linkedin"
+          variant="solid"
+          onClick={() => nativage("/send")}
+        >
+          나도 사연 쓰러가기
+        </Button>
+      </div>
     </Layout>
   );
 };
