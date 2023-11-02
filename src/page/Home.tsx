@@ -33,12 +33,11 @@ const Home = () => {
   console.log(user);
   return (
     <Layout>
-      <div className="">
-        <Story />
-      </div>
+      <Story />
 
       <div className=" flex justify-center my-5">
         <Button
+          size={"lg"}
           colorScheme="linkedin"
           variant="solid"
           onClick={() => nativage("/send")}

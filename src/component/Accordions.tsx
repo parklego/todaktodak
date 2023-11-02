@@ -13,10 +13,10 @@ interface AccordionProps {
 
 const Accordions = ({ title, content }: AccordionProps) => {
   return (
-    <div>
-      <AccordionItem className="border-none">
+    <div className="mt-2 ">
+      <AccordionItem className="border-2 rounded">
         <h2>
-          <AccordionButton className="flex justify-between">
+          <AccordionButton className="flex justify-between ">
             <div className="">{`오늘 날씨가 좋네요.`}</div>
             <AccordionIcon />
           </AccordionButton>
