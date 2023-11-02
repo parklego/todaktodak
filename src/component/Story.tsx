@@ -2,8 +2,6 @@ import React from "react";
 import { Accordion } from "@chakra-ui/react";
 import Accordions from "./Accordions";
 
-import StoryCard from "./StoryCard";
-
 const Story = () => {
   // Todo : 각 story items firebase에서 가져와서 map으로 뿌려주기
   return (
