@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Accordion } from "@chakra-ui/react";
 import Accordions from "./Accordions";
 import { db } from "../firebase";
-import { collection, query, orderBy } from "firebase/firestore";
+import { collection, query, orderBy, doc } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { StoryItem } from "../types";
 import { useRecoilState } from "recoil";
@@ -19,6 +19,12 @@ const Story = () => {
     if (storyList) {
       setStory({ ...story, allStory: storyList.length });
     }
+    const collectionRef = collection(db, "story");
+    const docRef = doc(collectionRef);
+
+    const newDocId = docRef.id;
+
+    console.log("newDocId", newDocId);
   }, [storyList]);
 
   const storyItems = storyList?.map((item, idx) => {
