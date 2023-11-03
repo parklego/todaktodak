@@ -18,7 +18,9 @@ const Accordions = ({ title, content }: AccordionProps) => {
       <AccordionItem className="border-2 rounded">
         <h2>
           <AccordionButton className="flex justify-between ">
-            <div className="">{title}</div>
+            <div className=" overflow-hidden text-ellipsis whitespace-nowrap">
+              {title}
+            </div>
             <AccordionIcon />
           </AccordionButton>
         </h2>
