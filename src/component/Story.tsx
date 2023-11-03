@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Accordion } from "@chakra-ui/react";
 import Accordions from "./Accordions";
-import { db } from "../firebase"; // 위에서 정의한 firebase 설정 파일
+import { db } from "../firebase";
 import { collection, query, orderBy } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { StoryItem } from "../types";
+import { useRecoilState } from "recoil";
+import { storyState } from "../atom/story";
+
 const Story = () => {
+  const [story, setStory] = useRecoilState(storyState);
+
   const q = query(collection(db, "story"), orderBy("timestamp", "desc"));
 
   const [storyList] = useCollectionData(q);
+
+  useEffect(() => {
+    if (storyList) {
+      setStory({ ...story, allStory: storyList.length });
+    }
+  }, [storyList]);
 
   const storyItems = storyList?.map((item, idx) => {
     return (

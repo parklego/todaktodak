@@ -5,5 +5,6 @@ export const storyState = atom({
   default: {
     editTitle: "",
     editStory: "",
+    allStory: 0,
   },
 });

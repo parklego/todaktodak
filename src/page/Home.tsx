@@ -10,9 +10,13 @@ import { useRecoilValue } from "recoil";
 import { storyStateSelector } from "../selector/user";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import Spinners from "../component/Spinners";
+import { storyState } from "../atom/story";
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
+
+  const story = useRecoilValue(storyState);
+
   const isEdit = useRecoilValue(storyStateSelector);
 
   const nativage = useNavigate();
@@ -42,6 +46,9 @@ const Home = () => {
 
   return (
     <Layout>
+      <p className="flex justify-center my-5">
+        현재까지 보내온 사연의 수 : {story?.allStory}
+      </p>
       <Story />
       <div className=" flex justify-center my-5">
         <Button
