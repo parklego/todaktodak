@@ -16,17 +16,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
 import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
 
 const SendStory = () => {
   const [story, setStory] = useRecoilState(storyState);
   const [user] = useAuthState(auth);
 
   const navigate = useNavigate();
-
-  const generateUUID = () => {
-    return uuidv4();
-  };
 
   const sendStory = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
