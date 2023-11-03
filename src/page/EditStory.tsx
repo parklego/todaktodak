@@ -35,7 +35,6 @@ const EditStory = () => {
 
     Swal.fire({
       title: "사연을 이대로 보내시겠습니까?",
-      text: " 사연을 보내면 더 이상 수정할 수 없으니 신중하게 작성해주세요.",
       icon: "info",
       showCancelButton: true,
       confirmButtonText: "확인",
