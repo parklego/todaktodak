@@ -1,19 +1,21 @@
-
 <p align="center"><img src="https://github.com/parklego/todaktodak/assets/53068281/a5c753da-894f-4d21-a900-589e4b64ab43"/></p>
 
 ## 프로젝트 이름
+
 <br/>
 토닥토닥
 <br/>
 <br/>
 
 ## 프로젝트 슬로건
+
 <br/>
 당신의 사연을 들려주세요.
 <br/>
 <br/>
 
-## 프로젝트 설명    
+## 프로젝트 설명
+
 <br/>
 바쁜 현대인들이 자신의 감정이나 사연을 이야기하여 따뜻한 말 한 마디를 들으며 위안을 삼고, 다른 사람들은 어떻게 지내고 있는지 다른 사람들의 감정을 옅볼 수 있는 플랫폼. 
 <br/>
@@ -22,20 +24,19 @@
 <br/>
 <br/>
 
-## 사용 기술 스택 
+## 사용 기술 스택
 
 <img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat&logo=tailwindcss&logoColor=white"/>
 <img src="https://img.shields.io/badge/Typescript-blue?style=flat&logo=Typescript&logoColor=white"/>
 <img src="https://img.shields.io/badge/React-82D7F7?style=flat&logo=React&logoColor=white"/>
-<img src="https://img.shields.io/badge/recoil-3578E5?style=flat&logo=recoil&logoColor=white"/> 
+<img src="https://img.shields.io/badge/recoil-3578E5?style=flat&logo=recoil&logoColor=white"/>
 <img src="https://img.shields.io/badge/chakraui-319795?style=flat&logo=chakraui&logoColor=white"/>
 <img src="https://img.shields.io/badge/firebase-FFCA28?style=flat&logo=firebase&logoColor=white"/>
 <img src="https://img.shields.io/badge/githubpages-222222?style=flat&logo=githubpages&logoColor=white"/>
 
 <br/>
 
-## 구현 페이지 
-
+## 구현 페이지
 
 - 모바일 환경
 
@@ -48,17 +49,14 @@
 
 <br/>
 
-
 - 데스크탑 환경
 
   <br/>
 
  <img src="https://github.com/parklego/todaktodak/assets/53068281/32db0fc9-46ab-4e40-ad28-0d9b1199fd09" width="100%" height="100%"/>
 
-
-
 ## 주요 기능
- 
+
 - firebase Authentication
   - 구글 소셜 로그인 구현
 - firebase Database
@@ -70,10 +68,13 @@
   - 사연 쓰기의 경우, input 값을 저장하여 다른 라우터로 이동하더라도 해당 값 전역 상태로 관리하여 값 소실하지 않음
   - input 값을 selectort로 감지하여 사연 쓰기 및 사연 이어쓰기로 감지
 - UI
-  - 사연 부분에 네이버 나눔 다행, 나눔 성실 글씨체 적용   
-  - chakra UI로 Spinner, Accordion 스타일링 
+  - 사연 부분에 네이버 나눔 다행, 나눔 성실 글씨체 적용
+  - chakra UI로 Spinner, Accordion 스타일링
   - sweetalert2 라이브러리로 팝업 UI 스타일링
- 
+- SEO
+  - Google console
+  - Naver searchadvisor
+
 ## To-do
 
 - [ ] 회원가입 페이지
@@ -91,6 +92,3 @@
 <br/>
 <br/>
 <br/>
-  
-
-  
