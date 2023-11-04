@@ -6,7 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
+} from "firebase/auth";
 import { auth } from "../firebase";
 import Spinners from "../component/Spinners";
 import Input from "../component/Input";
@@ -43,23 +47,25 @@ const Register = () => {
     setIsLoading(true);
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(async (userCredential) => {
         const user = userCredential.user;
-        console.log("user", user);
+
+        await sendEmailVerification(user).then((res) => {
+          console.log(res);
+        });
 
         setIsLoading(false);
 
         Swal.fire({
           icon: "info",
-          text: "회원가입이 완료되었습니다. 이메일을 확인해주세요.",
+          text: "토닥토닥 회원이 되신 것을 환영합니다. 언제나 토닥토닥은 당신을 응원합니다. ",
           confirmButtonText: "확인",
         }).then((result) => {
           if (result.isConfirmed) {
+            signOut(auth);
             navigate("/");
           }
         });
-
-        navigate("/");
       })
       .catch((error) => {
         setIsLoading(false);

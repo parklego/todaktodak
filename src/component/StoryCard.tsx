@@ -35,7 +35,7 @@ const StoryCard = ({ content }: StoryCardProps) => {
       <Card className=" my-4">
         <CardHeader>
           <div className=" flex flex-row  w-full justify-between items-center">
-            <Heading size="sm">{content.name}</Heading>
+            <Heading size="sm">{content.name || "어느 누군가"}</Heading>
             <p>
               {checkVerification && (
                 <Button
