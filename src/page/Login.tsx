@@ -47,7 +47,12 @@ const Login = () => {
           navigate("/");
         } else {
           signOut(auth);
-          Alert("info", "안내", "이메일 인증을 완료한 후 시도하여주세요.");
+          Swal.fire({
+            icon: "info",
+            title: "안내",
+            text: "이메일 인증을 완료한 후 시도하여주세요.",
+            footer: "이메일이 도착하지 않았다면 스팸함을 확인해보세요.",
+          });
         }
         setIsLoading(false);
       })
