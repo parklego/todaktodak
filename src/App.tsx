@@ -9,6 +9,7 @@ import Spinners from "./component/Spinners";
 const Home = lazy(() => import("./page/Home"));
 const SendStory = lazy(() => import("./page/SendStory"));
 const EditStory = lazy(() => import("./page/EditStory"));
+const Register = lazy(() => import("./page/Register"));
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/send" element={<SendStory />}></Route>
               <Route path="/edit" element={<EditStory />}></Route>
+              <Route path="/register" element={<Register />}></Route>
             </Routes>
           </Suspense>
         </BrowserRouter>

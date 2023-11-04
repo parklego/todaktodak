@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import Input from "../component/Input";
 import Alert from "../component/Alert";
@@ -11,6 +12,8 @@ const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const deviceCheck = () => {
     const kakaoCheck = () => {
@@ -27,10 +30,10 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-wrap content-center lg:items-center h-screen ">
+    <div className="flex flex-wrap content-center lg:items-center  ">
       <div className="w-full lg:w-5/12">
         <div className="flex flex-col justify-center items-center  ">
-          <img className=" w-1/2" src={logo} alt="logo" />
+          <img className=" w-1/2 mt-5" src={logo} alt="logo" />
           <Input
             type="text"
             id="Email"
@@ -45,6 +48,10 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></Input>
+        </div>
+
+        <div className=" flex justify-center text-blue-700 ml-[40%]">
+          <button onClick={() => navigate("/register")}>회원가입</button>
         </div>
 
         <div className="flex flex-col items-center mt-5">
