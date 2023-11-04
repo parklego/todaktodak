@@ -58,6 +58,7 @@
 ## 주요 기능
 
 - firebase Authentication
+  - 일반 이메일 인증 로그인 구현
   - 구글 소셜 로그인 구현
 - firebase Database
   - 유저 로그인 정보
@@ -71,15 +72,15 @@
   - 사연 부분에 네이버 나눔 다행, 나눔 성실 글씨체 적용
   - chakra UI로 Spinner, Accordion 스타일링
   - sweetalert2 라이브러리로 팝업 UI 스타일링
+  - toast를 이용하여 회원가입 등 벨리데이션 체크
 - SEO
   - Google console
   - Naver searchadvisor
 
 ## To-do
 
-- [ ] 회원가입 페이지
-- [ ] 이메일 인증 로그인
 - [ ] 유저들 데이터 백업
+- [ ] 기타 이슈 및 최적화
 
 <br/>
  
