@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import Input from "../component/Input";
-import Alert from "../component/Alert";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import logo from "../asset/logo.jpg";
-import bg from "../asset/bg.jpg";
 import { signInWithEmailAndPassword, signOut } from "@firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import Spinners from "../component/Spinners";
+import Penguin from "../component/Penguin";
+import { Canvas } from "@react-three/fiber";
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
@@ -111,12 +111,16 @@ const Login = () => {
             </Button>
           </div>
         </div>
-        <div className=" hidden lg:block w-full lg:w-7/12">
-          <img
-            className=" lg:w-screen lg:h-screen"
-            src={bg}
-            alt="background"
-          ></img>
+        <div className="hidden lg:block w-full h-screen lg:w-7/12">
+          <Canvas
+            camera={{
+              position: [0, 0, 10],
+            }}
+          >
+            <ambientLight />
+
+            <Penguin position={[0, 0, 0]} />
+          </Canvas>
         </div>
       </div>
     </>
