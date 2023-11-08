@@ -8,18 +8,25 @@ Title: Penguin plush
 */
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { GroupProps, useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
+import { GLTF } from "three-stdlib";
 
-function Penguin(props: any) {
-  const meshRef = useRef<THREE.Mesh>(null!);
+// https://github.com/pmndrs/drei/issues/469
+export type DreiGLTF = GLTF & {
+  nodes: Record<string, THREE.Mesh>;
+  materials: Record<string, THREE.MeshStandardMaterial>;
+};
+
+function Penguin(props: GroupProps) {
+  const meshRef = useRef<THREE.Group>(null!);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const { nodes, materials }: any = useGLTF("/scene.gltf");
+  const { nodes, materials } = useGLTF("/scene.gltf") as DreiGLTF;
 
   const sensitivity = 1000;
 
   useEffect(() => {
-    const handleMouseMove = (event: any) => {
+    const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({
         x: event.clientY / sensitivity,
         y: event.clientX / sensitivity,
@@ -39,7 +46,7 @@ function Penguin(props: any) {
   });
 
   return (
-    <group {...props} dispose={null} ref={meshRef}>
+    <group ref={meshRef} {...props} dispose={null}>
       <group scale={0.02}>
         <mesh
           geometry={nodes["Box001_02_-_Default_0"].geometry}
