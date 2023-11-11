@@ -29,10 +29,6 @@ const Register = () => {
   const registerUser = async (e: any) => {
     e.preventDefault();
 
-    console.log("email", email);
-    console.log("password", password);
-    console.log("confirmPassword", confirmPassword);
-
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (!emailRegex.test(email)) {
@@ -50,9 +46,7 @@ const Register = () => {
       .then(async (userCredential) => {
         const user = userCredential.user;
 
-        await sendEmailVerification(user).then((res) => {
-          console.log(res);
-        });
+        await sendEmailVerification(user).then((res) => {});
 
         setIsLoading(false);
 

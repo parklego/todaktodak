@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Accordion } from "@chakra-ui/react";
 import Accordions from "./Accordions";
 import { db } from "../firebase";
-import { collection, query, orderBy, doc } from "firebase/firestore";
+import { collection, query, orderBy } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import { StoryItem } from "../types";
 import { useRecoilState } from "recoil";
@@ -19,12 +19,6 @@ const Story = () => {
     if (storyList) {
       setStory({ ...story, allStory: storyList.length });
     }
-    const collectionRef = collection(db, "story");
-    const docRef = doc(collectionRef);
-
-    const newDocId = docRef.id;
-
-    console.log("newDocId", newDocId);
   }, [storyList]);
 
   const storyItems = storyList?.map((item, idx) => {
@@ -35,7 +29,10 @@ const Story = () => {
 
   return (
     <div className=" lg:flex lg:justify-center p-5">
-      <Accordion className="h-[60vh] overflow-scroll lg:w-[80%] " allowToggle>
+      <Accordion
+        className="h-[60vh] overflow-scroll lg:w-[80%] scrollbar-hide"
+        allowToggle
+      >
         {storyItems}
       </Accordion>
     </div>

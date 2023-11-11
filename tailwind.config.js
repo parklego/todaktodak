@@ -2,11 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
-    fontFamily: {
-      nanumDahaeng: ["nanumDahaeng"],
-      nanumSungsil: ["nanumSungsil"],
+    extend: {
+      fontFamily: {
+        nanumDahaeng: ["nanumDahaeng"],
+        nanumSungsil: ["nanumSungsil"],
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

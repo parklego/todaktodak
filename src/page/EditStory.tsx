@@ -58,7 +58,6 @@ const EditStory = () => {
             navigate("/");
           })
           .catch((e) => {
-            console.log(e);
             Alert(
               "error",
               "실패",

@@ -54,7 +54,7 @@ const StoryCard = ({ content }: StoryCardProps) => {
           </div>
         </CardHeader>
         <CardBody>
-          <Text className=" font-nanumDahaeng">{content.text}</Text>
+          <Text className=" font-nanumDahaeng text-lg">{content.text}</Text>
         </CardBody>
       </Card>
 
@@ -71,7 +71,7 @@ const StoryCard = ({ content }: StoryCardProps) => {
         </CardHeader>
 
         <CardBody>
-          <Text className=" font-nanumSungsil">{reply}</Text>{" "}
+          <Text className=" font-nanumSungsil text-lg">{reply}</Text>{" "}
         </CardBody>
       </Card>
     </>
