@@ -61,6 +61,8 @@
 https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-74fd22bd374c
 
 
+<br/>
+<br/>
 
 ## 주요 기능
 
@@ -84,6 +86,8 @@ https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-7
 - SEO
   - Google console
   - Naver searchadvisor
+    
+<br/>
 
 ## To-do
 
@@ -91,7 +95,18 @@ https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-7
 - [ ] 기타 이슈 및 최적화
 
 <br/>
+<br/>
+
+## 배포
  
+- 배포 사이트 : https://parklego.github.io/
+<br/>
+
+- three.js 관련 내용 : https://parklego.oopy.io/e322a370-53ff-49c9-9d1f-7a45ccc49817
+
+<br/>
+<br/>
+
 ## 느낀점
 
 - 타입스크립트를 사용함으로 타입정의에 시간이 들어가지만 컴파일 단계에서 사전에 에러를 표시해줌으로 이후에 발생할 에러를 예방해 주어 생산성이 증가했음을 느꼈다. 
@@ -102,3 +117,5 @@ https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-7
 <br/>
 <br/>
 <br/>
+
+
