@@ -32,7 +32,8 @@
 <img src="https://img.shields.io/badge/recoil-3578E5?style=flat&logo=recoil&logoColor=white"/>
 <img src="https://img.shields.io/badge/chakraui-319795?style=flat&logo=chakraui&logoColor=white"/>
 <img src="https://img.shields.io/badge/firebase-FFCA28?style=flat&logo=firebase&logoColor=white"/>
-<img src="https://img.shields.io/badge/githubpages-222222?style=flat&logo=githubpages&logoColor=white"/>
+<img src="https://img.shields.io/badge/threedotjs-000000?style=flat&logo=firebase&logoColor=white"/>
+
 
 <br/>
 
@@ -55,6 +56,12 @@
 
  <img src="https://github.com/parklego/todaktodak/assets/53068281/32db0fc9-46ab-4e40-ad28-0d9b1199fd09" width="100%" height="100%"/>
 
+ 
+
+https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-74fd22bd374c
+
+
+
 ## 주요 기능
 
 - firebase Authentication
@@ -73,6 +80,7 @@
   - chakra UI로 Spinner, Accordion 스타일링
   - sweetalert2 라이브러리로 팝업 UI 스타일링
   - toast를 이용하여 회원가입 등 벨리데이션 체크
+  - three.js(R3F)를 이용한 마우스 커서에 따라 반응하는 팽귄
 - SEO
   - Google console
   - Naver searchadvisor
@@ -86,9 +94,10 @@
  
 ## 느낀점
 
-- 타입스크립트를 사용함으로 타입정의에 시간이 들어가지만 컴파일 단계에서 사전에 에러를 표시해줌으로 이후에 발생할 에러를 예방해 주어 생산성이 증가했음을 느꼈다. (javascript를 사용할 때에는 잘 나오다가 왜 지금은 undefined가 뜨지? 라며 디버깅에 은근 시간이 소요됐었다.)
+- 타입스크립트를 사용함으로 타입정의에 시간이 들어가지만 컴파일 단계에서 사전에 에러를 표시해줌으로 이후에 발생할 에러를 예방해 주어 생산성이 증가했음을 느꼈다. 
 - Recoil이 확실히 전역 상태관리가 쉽다는 것을 느꼈다.
 - tailwind css가 생각보다 편리했다.
+- three.js(R3F)를 이용하여 인터렉티브한 기능을 하나 넣었는데 재밌었다.
 
 <br/>
 <br/>
