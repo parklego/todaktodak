@@ -99,7 +99,7 @@ https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-7
 
 ## 배포
  
-- 배포 사이트 : https://parklego.github.io/
+- 배포 사이트 : 중지
 <br/>
 
 - three.js 관련 내용 : https://parklego.oopy.io/e322a370-53ff-49c9-9d1f-7a45ccc49817
