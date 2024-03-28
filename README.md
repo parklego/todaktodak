@@ -102,7 +102,7 @@ https://github.com/parklego/todaktodak/assets/53068281/b64c909e-66fd-4a73-89f4-7
 - 배포 사이트 : 중지
 <br/>
 
-- three.js 관련 내용 : https://parklego.oopy.io/e322a370-53ff-49c9-9d1f-7a45ccc49817
+- three.js 관련 내용 : [TIL 인터렉티브](https://parklego.github.io/til/think.html#%EC%9D%B8%ED%84%B0%EB%A0%89%ED%8B%B0%EB%B8%8C)
 
 <br/>
 <br/>
